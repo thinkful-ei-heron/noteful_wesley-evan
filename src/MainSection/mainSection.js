@@ -18,8 +18,8 @@ export class MainSection extends Component {
               <NoteItem 
                 id={result.id}
                 key={Math.random()}
-                content={result.content}
                 name={result.name}
+                content={result.content}
                 modified={result.modified}
                 folderId={result.folderId}
               />

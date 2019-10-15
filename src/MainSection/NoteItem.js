@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import { format } from 'date-fns'
+import {Link} from 'react-router-dom'
 
 export class NoteItem extends Component {
   //This will add a button to DELETE the item.
@@ -10,10 +10,9 @@ export class NoteItem extends Component {
     const dateModified = new Date(this.props.modified);
     return (
       <div className='SingleNote'>
-        <h3>{this.props.name}</h3>
+        <h3><Link to={`/note/${this.props.id}`} >{this.props.name}</Link></h3>
         <span>{dateModified.toDateString()}</span>
         <button>Delete</button>
-        <p>{this.props.content}</p>
       </div>
     )
   }

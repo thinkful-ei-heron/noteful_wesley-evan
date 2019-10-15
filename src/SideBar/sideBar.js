@@ -6,6 +6,7 @@ import AddFolderButton from './AddFolderButton';
 export class SideBar extends Component {
   
   render() {
+    //console.log(this.props.folders)
     return (
       <div className='FolderList'>
         <FolderList />

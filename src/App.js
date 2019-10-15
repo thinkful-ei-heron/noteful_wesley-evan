@@ -14,12 +14,16 @@ function App(){
     folders: STORE.folders,
     notes: STORE.notes
   }
-
+  //console.log(state);
     return (
     <div className="App">
       <Header />
-      <MainSection />
-      <SideBar />
+      <MainSection 
+        notes={state.notes}
+      />
+      <SideBar 
+        folders={state.folders}
+      />
     </div>
   );
     }

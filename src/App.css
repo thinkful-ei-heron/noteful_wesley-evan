@@ -20,3 +20,32 @@
 .App-link {
   color: #09d3ac;
 }
+
+.FolderList {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  position: absolute;
+  top: 12rem;
+}
+
+.FolderItem {
+  border: 1px black solid;
+  padding: 1px 20px 1px 20px;
+}
+
+.MainSection {
+  margin-left: 10rem;
+  text-align: left;
+}
+
+.SingleNote {
+  border: 1px black solid;
+  padding: 10px;
+  margin: 5px;
+}
+
+.Header {
+  border-bottom: 1px black solid;
+  padding: 5% 30% 5% 10%;
+}

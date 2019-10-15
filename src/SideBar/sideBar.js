@@ -7,10 +7,8 @@ export class SideBar extends Component {
   
   render() {
     return (
-      <div>
-        <h3>Side Bar Section</h3>
+      <div className='FolderList'>
         <FolderList />
-        <AddFolderButton/>
         <GoBackButton />
       </div>
     )

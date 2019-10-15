@@ -5,7 +5,7 @@ export class NoteItem extends Component {
   // This will also need to have the folder ID passed in. 
   render() {
     return (
-      <div>
+      <div className='SingleNote'>
         <h3>Single Note</h3>
         <p>Date modified</p>
         <button>Delete</button>

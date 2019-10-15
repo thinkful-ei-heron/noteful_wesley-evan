@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import FolderItem from './FolderItem'
+import AddFolderButtom from './AddFolderButton'
+import GoBackButton from './GoBackButton'
 
 export class FolderList extends Component {
   // Folder List will find Folders from the the store and map over to create a list of folder options.
@@ -6,12 +9,11 @@ export class FolderList extends Component {
   render() {
     return (
       <div>
-        <h4>Folder List</h4>
-        <h6>Folder Item</h6>
-        <h6>Folder Item</h6>
-        <h6>Folder Item</h6>
-        <h6>Folder Item</h6>
-        <h6>Add Folder Button</h6>
+        <FolderItem />
+        <FolderItem />
+        <FolderItem />
+        <FolderItem />
+        <AddFolderButtom />
       </div>
     )
   }

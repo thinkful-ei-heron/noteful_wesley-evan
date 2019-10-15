@@ -21,40 +21,69 @@ function App(){
       <Header />
 
       <Switch>
-        <Route 
-          exact path= '/'
-          render={()=>{
-           return(
-             <div>
-              <MainSection 
-                  notes={state.notes}
+        <Route
+              path='/folders/:folderId'
+              render={(props)=>{
+                console.log(props.match.params.folderId)
+                const noContentNote = state.notes.filter(note => {
+                  note.content = null;
+                  return note;
+                })
+                const filteredNotes= noContentNote.filter(note => (note.folderId === props.match.params.folderId))
+                return (
+                  <div>
+                    <MainSection 
+                      notes={filteredNotes}
+                    />
+                    <SideBar 
+                      folders={state.folders}
+                    />
+                  </div>
+                )
+              }}
               />
-              <SideBar 
-                  folders={state.folders}
+        <Route
+              path='/folders/:folderId'
+              render={(props)=>{
+                console.log(props.match.params.folderId)
+                const noContentNote = state.notes.filter(note => {
+                  note.content = null;
+                  return note;
+                })
+                const filteredNotes= noContentNote.filter(note => (note.folderId === props.match.params.folderId))
+                return (
+                  <div>
+                    <MainSection 
+                      notes={filteredNotes}
+                    />
+                    <SideBar 
+                      folders={state.folders}
+                    />
+                  </div>
+                )
+              }}
               />
-             </div>
-           ) 
-          }}
-          />
-          <Route
-            path='/folders/:folderId'
-            render={(props)=>{
-              console.log(props.match.params.folderId)
-              const filteredNotes= state.notes.filter(note => (note.folderId === props.match.params.folderId)  
-              )
-              return (
-                <div>
-                  <MainSection 
-                    notes={filteredNotes}
-                  />
-                  <SideBar 
-                    folders={state.folders}
-                  />
-                </div>
-              )
-            }}
-            />
-      </Switch>
+        <Route
+              path='/'
+              render={(props)=>{
+                console.log(props.match.params.folderId)
+                const noContentNote = state.notes.filter(note => {
+                  note.content = null;
+                  return note;
+                })
+                return (
+                  <div>
+                    <MainSection 
+                      notes={noContentNote}
+                    />
+                    <SideBar 
+                      folders={state.folders}
+                    />
+                  </div>
+                )
+              }}
+              />
+        </Switch>
     </div>
   );
     }

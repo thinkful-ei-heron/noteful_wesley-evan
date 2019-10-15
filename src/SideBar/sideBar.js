@@ -12,7 +12,6 @@ export class SideBar extends Component {
         <FolderList 
           folders={this.props.folders}
         />
-        <GoBackButton />
       </div>
     )
   }

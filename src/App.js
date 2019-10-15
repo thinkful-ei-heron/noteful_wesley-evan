@@ -16,7 +16,6 @@ function App(){
     folders: STORE.folders,
     notes: STORE.notes
   }
-
     return (
     <div className="App">
       <Header />
@@ -37,6 +36,24 @@ function App(){
            ) 
           }}
           />
+          <Route
+            path='/folders/:folderId'
+            render={(props)=>{
+              console.log(props.match.params.folderId)
+              const filteredNotes= state.notes.filter(note => (note.folderId === props.match.params.folderId)  
+              )
+              return (
+                <div>
+                  <MainSection 
+                    notes={filteredNotes}
+                  />
+                  <SideBar 
+                    folders={state.folders}
+                  />
+                </div>
+              )
+            }}
+            />
       </Switch>
     </div>
   );

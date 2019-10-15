@@ -26,9 +26,6 @@ export class MainSection extends Component {
             )
           }
         })}
-        <AddNote 
-          key={Math.random()}
-        />
       </div>
     )
   }

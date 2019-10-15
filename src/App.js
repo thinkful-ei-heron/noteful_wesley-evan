@@ -10,6 +10,7 @@ import { Route } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
 import GoBackButton from './SideBar/GoBackButton';
 import Content from './MainSection/content';
+import AddNote from './MainSection/AddNote'
 
 
 function App() {
@@ -20,16 +21,14 @@ function App() {
   }
   return (
     <div className="App">
-      <Header />
-
       <Switch>
       <Route
           path='/note/:noteId'
           render={(props) => {
-            //console.log(props.match.params)
             const filteredNote = state.notes.filter(note => (note.id === props.match.params.noteId))
             return (
               <div>
+                <Header />
                 <MainSection
                   notes={filteredNote}
                 />
@@ -44,19 +43,18 @@ function App() {
         <Route
           path='/folders/:folderId'
           render={(props) => {
-            console.log(props.match.params.folderId)
-            // const noContentNote = state.notes.filter(note => {
-            //  // note.content = null;
-            //   return note;
-            // })
             const filteredNotes = state.notes.filter(note => (note.folderId === props.match.params.folderId))
             return (
               <div>
+                <Header />
                 <MainSection
                   notes={filteredNotes}
                 />
                 <SideBar
                   folders={state.folders}
+                />
+                <AddNote 
+                  key={Math.random()}
                 />
               </div>
             )
@@ -65,18 +63,17 @@ function App() {
         <Route
           path='/'
           render={(props) => {
-            console.log(props.match.params.folderId)
-            // const noContentNote = state.notes.filter(note => {
-            //   note.content = null;
-            //   return note;
-            // })
             return (
               <div>
+                <Header />
                 <MainSection
                   notes={state.notes}
                 />
                 <SideBar
                   folders={state.folders}
+                />
+                <AddNote 
+                  key={Math.random()}
                 />
               </div>
             )

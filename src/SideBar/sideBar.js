@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import FolderList from './FolderList';
-import GoBackButton from './GoBackButton';
 import './sideBar.css';
 
 export class SideBar extends Component {

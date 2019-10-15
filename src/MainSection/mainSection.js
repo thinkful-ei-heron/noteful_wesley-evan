@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import NoteItem from './NoteItem';
-import AddNote from './AddNote';
 
 export class MainSection extends Component {
   render() {

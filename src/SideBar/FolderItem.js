@@ -4,7 +4,7 @@ export class FolderItem extends Component {
   render() {
     return (
       <div className='FolderItem'>
-          <p>FolderName</p>
+          <p>{this.props.name}</p>
       </div>
     )
   }

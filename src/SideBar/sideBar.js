@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import FolderList from './FolderList';
 import GoBackButton from './GoBackButton';
-import AddFolderButton from './AddFolderButton';
 
 export class SideBar extends Component {
   
@@ -9,7 +8,9 @@ export class SideBar extends Component {
     //console.log(this.props.folders)
     return (
       <div className='FolderList'>
-        <FolderList />
+        <FolderList 
+          folders={this.props.folders}
+        />
         <GoBackButton />
       </div>
     )

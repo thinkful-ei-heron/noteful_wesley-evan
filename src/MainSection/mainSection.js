@@ -5,7 +5,6 @@ import AddNote from './AddNote';
 export class MainSection extends Component {
   render() {
     const notesList = this.props.notes;
-    console.log(this.props.notes.name);
 
     return (
       <div className="MainSection">
@@ -16,16 +15,14 @@ export class MainSection extends Component {
             return(<div></div>)
           } else {
             return (
-              <div>
               <NoteItem 
-                id={notesList.id}
+                id={result.id}
                 key={Math.random()}
-                content={notesList.content}
-                name={notesList.name}
-                modified={notesList.modified}
-                folderId={notesList.folderId}
+                content={result.content}
+                name={result.name}
+                modified={result.modified}
+                folderId={result.folderId}
               />
-              </div>
             )
           }
         })}

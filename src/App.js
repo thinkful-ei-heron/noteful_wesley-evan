@@ -2,38 +2,26 @@
 
 import React, { Component } from 'react'
 import './App.css';
-import MainSection from './mainSection';
-import SideBar from './sideBar';
+import MainSection from './MainSection/mainSection';
+import SideBar from './SideBar/sideBar';
 import Header from './header';
 import STORE from './dummy-store';
-import { Route } from 'react-router-dom'
-import Homepage from'./HomePage';
 
- export class App extends Component() {
 
-  state ={
+function App(){
+
+  const state ={
     folders: STORE.folders,
     notes: STORE.notes
   }
 
-
-
-
-  
-
-
-  render () {return (
+    return (
     <div className="App">
-      <Route 
-        path='/'
-        component={Homepage}
-      />
       <Header />
       <MainSection />
       <SideBar />
     </div>
   );
-  }
-}
+    }
 
 export default App;
